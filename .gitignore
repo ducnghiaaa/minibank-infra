@@ -1,0 +1,18 @@
+# state lives in S3, never in git
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+crash.*.log
+
+# may hold secrets
+*.tfvars
+*.tfvars.json
+!*.example.tfvars
+
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+.DS_Store
