@@ -15,9 +15,15 @@ permissions:
 jobs:
   plan:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        stack:
+          - workload/dev/persistent/ci-oidc
+          - workload/dev/persistent/dns
     defaults:
       run:
-        working-directory: workload/dev/persistent/ci-oidc
+        working-directory: ${{ matrix.stack }}
     steps:
       - uses: actions/checkout@v4
 
