@@ -1,5 +1,6 @@
 locals {
-  repo         = "ducnghiaaa/minibank-infra"
+  # repo uses immutable OIDC subjects: owner@id/repo@id
+  repo         = "ducnghiaaa@129480468/minibank-infra@1459049748"
   state_bucket = "minibank-tfstate-701254204984"
 
   # role name => who may assume it, and what it may do
