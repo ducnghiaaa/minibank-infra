@@ -23,6 +23,7 @@ jobs:
           - workload/dev/persistent/dns
           - workload/dev/persistent/network
           - workload/dev/persistent/registry
+          - workload/dev/persistent/messaging
     defaults:
       run:
         working-directory: ${{ matrix.stack }}
