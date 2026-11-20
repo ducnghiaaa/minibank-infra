@@ -21,6 +21,7 @@ jobs:
         stack:
           - workload/dev/persistent/ci-oidc
           - workload/dev/persistent/dns
+          - workload/dev/persistent/network
     defaults:
       run:
         working-directory: ${{ matrix.stack }}

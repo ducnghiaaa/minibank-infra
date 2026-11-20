@@ -21,9 +21,10 @@ Design: `../minibank/docs/superpowers/specs/2026-10-26-minibank-infra-design.md`
 2. Workload stacks: bucket `minibank-tfstate-701254204984`, `use_lockfile = true`, no DynamoDB.
 3. Provider: `allowed_account_ids`, region `ap-southeast-1`, `default_tags` with
    `Project`, `ManagedBy`, `Stack`, plus `env=dev` and `component=<folder>` (spec §9.1).
-4. Pin versions: Terraform from `.terraform-version`, AWS provider `~> 6.0`, modules exact.
-5. Resources built in the console: add an `import` block; match console defaults (comment,
-   tags, names) so the plan is clean.
+4. Pin versions: Terraform from `.terraform-version`, AWS provider `~> 6.x`, modules exact.
+   Prefer `terraform-aws-modules/*` (spec §9.1); pick a module version at least 2 weeks old.
+5. Build from scratch (the console lab is cleaned up first). `import` only as an agreed
+   exception (e.g. `dns`); then match console defaults (comment, tags) so the plan is clean.
 6. Anything whose loss breaks things (zone, KMS, Aurora, state): `prevent_destroy = true`.
 7. Add the folder to the matrix in `.github/workflows/terraform-pr.yml`.
 8. Commit `.terraform.lock.hcl`. Never commit `*.tfstate` or real `*.tfvars`.
