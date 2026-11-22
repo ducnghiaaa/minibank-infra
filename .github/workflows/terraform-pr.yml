@@ -24,6 +24,7 @@ jobs:
           - workload/dev/persistent/network
           - workload/dev/persistent/registry
           - workload/dev/persistent/messaging
+          - workload/dev/persistent/identity
     defaults:
       run:
         working-directory: ${{ matrix.stack }}
